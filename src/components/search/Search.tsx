@@ -1,9 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
-import {GalleryDataContext} from '../providers/GalleryDataProvider';
 import {Paper} from '@mui/material';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
 import {usePoke} from '../../store/pokedex.store';
 

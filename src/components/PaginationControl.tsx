@@ -1,8 +1,6 @@
-import Card from './Card';
 import {ImageList, Pagination} from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import {useTheme} from '@mui/material/styles';
-import {useEffect, useState} from 'react';
 import {usePoke} from '../store/pokedex.store';
 
 export default function PaginationControl() {
@@ -21,6 +19,9 @@ export default function PaginationControl() {
   }
 
   return (
-    <Pagination count={Math.round(state.initialPokemon.count / 20)} onChange={(event, page) => handleChange(page)} />
+
+    <>
+      {state.initialPokemon.count && <Pagination count={Math.round(state.initialPokemon.count / 20)} onChange={(event, page) => handleChange(page)} />}
+    </>
   );
 }

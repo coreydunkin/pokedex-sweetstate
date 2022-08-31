@@ -1,11 +1,9 @@
 import {createTheme, styled, ThemeProvider} from '@mui/material';
 import {rgba, tint, shade, invert, meetsContrastGuidelines} from 'polished';
 import {ImageListItem, ImageListItemBar, Grid} from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
 import {motion} from 'framer-motion';
-import {useCounter, usePoke} from '../../store/pokedex.store';
 import { usePalette } from 'react-palette';
+import {usePoke} from '../../store/pokedex.store';
 
 const ImgWrapper = styled('span')`
   img {
@@ -18,7 +16,7 @@ const ImgWrapper = styled('span')`
   }
 `
 
-const CardImg = styled(Image)`
+const CardImg = styled('img')`
   transform: scale(var(--scale));
   transition: all 0.2s ease-out;
   margin: 0px auto!important;
@@ -48,7 +46,7 @@ const CardText = styled(ImageListItemBar)`
   }
 `;
 
-export default function Card({ item }) {
+export default function Card({ item }: any) {
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.indexNum}.png`;
   const [state, actions] = usePoke();
   const { data, loading, error } = usePalette(imageUrl);
